@@ -6,8 +6,17 @@ import {
   SignInButton,
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import { currentUser } from '@clerk/nextjs/server';
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+
+  const user = await currentUser();
+  if(user){
+    redirect("/topics")
+    console.log(user)
+  }
+
   return (
     <div className="w-full h-[100vh]  font-bold text-4xl p-8 flex flex-col md:justify-center  items-center overflow-hidden home-containter mt-16 md:mt-0">
       <h1 className="lg:w-1/2">
@@ -21,7 +30,7 @@ export default function Home() {
       </h1>
       <div className="lg:w-1/2 flex my-8">
         <SignedOut>
-          <SignInButton>
+          <SignInButton  >
             <Button>Login</Button>
           </SignInButton>
         </SignedOut>
