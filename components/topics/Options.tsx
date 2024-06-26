@@ -55,7 +55,9 @@ const Options =  () => {
             <p className="font-semibold">{option.description}</p>
           </CardContent>
           <CardFooter>
-            <Button  className="font-semibold" onClick={() => topicSelection(option.id)}>View</Button>
+            <Button  className="font-semibold" onClick={() => topicSelection(option.id)}>
+              <a href={`/posts/${option.title}`} className="w-full h-full">View</a>
+              </Button>
           </CardFooter>
         </Card>
       ))}
