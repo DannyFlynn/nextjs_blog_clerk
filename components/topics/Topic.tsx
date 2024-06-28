@@ -98,7 +98,7 @@ const Topic = () => {
           <h2>{pos.title} <p>{pos.User}</p></h2>
         ))}
         {posts.map((post, id) => (
-        <div>
+        <div key={post.id}>
         <h2 className="text-3xl font-bold">{post.title}</h2>
         <div className="w-full text-wrap">
         <ReactMarkdown>{fullContent ? post.content : post.content.substring(0, Math.floor(post.content.length / 3))}</ReactMarkdown>
