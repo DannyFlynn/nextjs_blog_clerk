@@ -45,6 +45,8 @@ const options = [
 ];
 
 const TopicChosen = async ({ params }: { params: Params }) => {
+
+
   const user = await currentUser();
   if (!user) {
     redirect("/");

@@ -12,3 +12,13 @@ model TestProfile {
 id  String @id @default(uuid())
 name String
 }
+
+model PostTable {
+  id  String @id @default(uuid())
+  language String
+  title String
+  content String
+  like Int
+  unlike Int
+  User String
+}
