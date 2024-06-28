@@ -94,9 +94,6 @@ const Topic = () => {
 
   return (
 <div className="md:w-2/3 min-h-20  mt-5 border-2 rounded-md p-4 relative">
-        {posts.map((pos,id) => (
-          <h2>{pos.title} <p>{pos.User}</p></h2>
-        ))}
         {posts.map((post, id) => (
         <div key={post.id}>
         <h2 className="text-3xl font-bold">{post.title}</h2>
