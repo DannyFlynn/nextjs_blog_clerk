@@ -3,6 +3,8 @@ import db from "./db";
 import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
+
+
 export const getPosts = async () => {
   //console.log(db);
 

@@ -8,10 +8,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model TestProfile {
-id  String @id @default(uuid())
-name String
-}
+
 
 model PostTable {
   id  String @id @default(uuid())
@@ -21,4 +18,5 @@ model PostTable {
   like Int
   unlike Int
   User String
+  createdAt DateTime @default(now())
 }
