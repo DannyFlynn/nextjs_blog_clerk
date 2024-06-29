@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { Button } from "../ui/button";
 import { getPosts } from "@/utils/actions";
+import Markdown from "markdown-to-jsx";
 
 
 const post = {
@@ -78,21 +79,32 @@ const Topic = () => {
 
   useEffect(() => {
 
-        const fetchPost =  async () => {
-          const response = await fetch('https://stunning-jalebi-687a93.netlify.app/api/posts')
-          const data = await response.json()
-          console.log(data)
-          const { post } = data
-          setPosts(post)
-          
-     }
-    // const fetchPost =  async () => {
-    //       const posts = await getPosts()
-    //       if(posts){
-    //       console.log(posts)
-    //       setPosts(posts)
+    //     const fetchPost =  async () => {
+    //       try {
+    //       //const response = await fetch('https://stunning-jalebi-687a93.netlify.app/api/posts')
+    //       const response = await fetch('/api/posts')
+    //       if (!response.ok) {
+    //         throw new Error('Network response was not ok');
     //       }
-    // }
+      
+    //         const data = await response.json()
+    //         console.log(data)
+    //         const { posts } = data
+    //         setPosts(posts)
+          
+    //       } catch(err) {
+    //         console.log("api error: ", err)
+    //       }
+
+          
+    //  }
+    const fetchPost =  async () => {
+          const posts = await getPosts()
+          if(posts){
+          console.log(posts)
+          setPosts(posts)
+          }
+    }
 
     fetchPost()
 
@@ -107,6 +119,7 @@ const Topic = () => {
         <h2 className="text-3xl font-bold">{post.title}</h2>
         <div className="w-full text-wrap">
         <ReactMarkdown>{fullContent ? post.content : post.content.substring(0, Math.floor(post.content.length / 3))}</ReactMarkdown>
+        {/* <Markdown>{post.content}</Markdown> */}
         <div className="relative border-t-2 w-full flex py-4">
             <button className="text-4xl">👍</button>
             <button className="ml-3 text-4xl">👎</button>
