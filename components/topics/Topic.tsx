@@ -7,7 +7,7 @@ import { getPosts } from "@/utils/actions";
 
 const post = {
     title: "Send a Form in Next.js",
-    user: "Danny Harris",
+    user: "Danny Flynn",
     content: `
       To send a form in Next.js, you can use the following code snippet:
 
