@@ -78,13 +78,21 @@ const Topic = () => {
 
   useEffect(() => {
 
-    const fetchPost =  async () => {
-          const posts = await getPosts()
-          if(posts){
-          console.log(posts)
-          setPosts(posts)
-          }
-    }
+        const fetchPost =  async () => {
+          const response = await fetch('/api/posts')
+          const data = await response.json()
+          console.log(data)
+          const { post } = data
+          setPosts(post)
+          
+     }
+    // const fetchPost =  async () => {
+    //       const posts = await getPosts()
+    //       if(posts){
+    //       console.log(posts)
+    //       setPosts(posts)
+    //       }
+    // }
 
     fetchPost()
 

@@ -13,7 +13,7 @@ export const getPosts = async () => {
     if (!user) throw new Error("Please login to create a profile");
     const post = await db.postTable.findMany();
     //const post = await db.testProfile.findMany();
-    //console.log(post)
+
     return post;
   } catch (error) {
     console.log(error)
