@@ -79,36 +79,37 @@ const Topic = () => {
 
   useEffect(() => {
 
-    //     const fetchPost =  async () => {
-    //       try {
-    //       //const response = await fetch('https://stunning-jalebi-687a93.netlify.app/api/posts')
-    //       const response = await fetch('/api/posts')
-    //       if (!response.ok) {
-    //         throw new Error('Network response was not ok');
-    //       }
+         const fetchPost =  async () => {
+           try {
+            const response = await fetch('https://stunning-jalebi-687a93.netlify.app/api/posts')
+            //const response = await fetch('/api/posts')
+           if (!response.ok) {
+             throw new Error('Network response was not ok');
+           }
       
-    //         const data = await response.json()
-    //         console.log(data)
-    //         const { posts } = data
-    //         setPosts(posts)
+            const data = await response.json()
+            console.log(data)
+            console.log("netlify deploy")
+            const { posts } = data
+            setPosts(posts)
           
-    //       } catch(err) {
-    //         console.log("api error: ", err)
-    //       }
+          } catch(err) {
+            console.log("api error: ", err)
+           }
 
           
-    //  }
-    const fetchPost =  async () => {
-          const posts = await getPosts()
-          if(posts){
-          console.log(posts)
-          setPosts(posts)
-          }
-    }
+     }
+    // const fetchPost =  async () => {
+    //       const posts = await getPosts()
+    //       if(posts){
+    //       console.log(posts)
+    //       setPosts(posts)
+    //       }
+    // }
 
     fetchPost()
 
-  }, [])
+  }, [posts])
 
     const [fullContent, setFullContent] = useState<boolean>(false)
 
