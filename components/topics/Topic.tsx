@@ -79,7 +79,7 @@ const Topic = () => {
   useEffect(() => {
 
         const fetchPost =  async () => {
-          const response = await fetch('/api/posts')
+          const response = await fetch('https://stunning-jalebi-687a93.netlify.app/api/posts')
           const data = await response.json()
           console.log(data)
           const { post } = data
