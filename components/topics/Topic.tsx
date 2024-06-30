@@ -109,7 +109,7 @@ const Topic = () => {
 
     fetchPost()
 
-  }, [posts])
+  }, [])
 
     const [fullContent, setFullContent] = useState<boolean>(false)
 
