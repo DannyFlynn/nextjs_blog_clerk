@@ -90,7 +90,7 @@ const Topic = () => {
             const data = await response.json()
             console.log(data)
             console.log("netlify deploy")
-            const { posts } = data
+            const { posts } = await data
             setPosts(posts)
           
           } catch(err) {
