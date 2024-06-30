@@ -91,8 +91,8 @@ const Topic = () => {
             console.log(data)
             console.log("netlify deploy")
             const { posts } = await data
-            setPosts(posts)
-          
+            setPosts(posts.post)
+            //setPosts(posts)
           } catch(err) {
             console.log("api error: ", err)
            }
